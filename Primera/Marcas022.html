@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>Reloj</title>
+<style type="text/css">
+</style>
+<script language="JavaScript">
+    var v=0;
+    function cambiar(){
+        if(imagen.src=="file:///C:/Users/danie/OneDrive/Documents/MARCAS/Primera/Imagenes/img1.jpg")
+            imagen.src="Imagenes/img2.jfif";
+        else
+            imagen.src="Imagenes/img1.jpg";
+    }
+    function parar(){
+        clearInterval(objeto)
+    }
+</script>
+</head>
+<body onload="objeto=setInterval('cambiar()',2000)">
+    <img id="imagen" src="Imagenes/img1.jpg" height="300" width="300">
+    <input type="button" value="Parar" onclick="parar()">
+</body>
+</html>

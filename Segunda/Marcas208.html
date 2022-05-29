@@ -1,0 +1,20 @@
+<html>
+<head>
+<title>Animacion y opacidad</title>
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script language="JavaScript">
+    $(document).ready(function(){
+        $("button").click(function(){
+            $("div").animate({height:'300px', opacity: '0.4'}, "slow");
+            $("div").animate({width:'300px', opacity: '0.8'}, "slow");
+            $("div").animate({height:'100px', opacity: '0.4'}, "slow");
+            $("div").animate({width:'10px', opacity: '1'}, "slow");
+        });
+    });
+</script>
+</head>
+<body>
+    <button>Iniciar Animación</button>
+    <div id="rectangulo" style="height: 100px; width: 10px; background-color: #98bf21; position: absolute;"></div>
+</body>
+</html>

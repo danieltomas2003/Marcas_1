@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>Transicio 2</title>
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script language="JavaScript">
+    $(document).ready(function(event){
+        $("#galeria div:gt(0)").hide(); //gt es una directiva que selecciona hasta el indice que pasemos como valor
+        setInterval(function(){
+            $("#galeria div:first-child").fadeOut().next("div")
+            .fadeIn(1000).end().appendTo("#galeria");
+        },4000)
+    });
+</script>
+<style>
+    #galeria{position: relative; width: 600; height: 400; overflow: hidden; 
+    border: 10px solid #333; margin: 0 auto; padding: 0; border-radius: 40px;}
+    #galeria p{position: absolute; left: 100; bottom: 30; color: blue; background: #990000; 
+    text-align: center; width: 400; height: 24px; padding: 5px; display: block; font-size: 22px; opacity: 0.7;}
+</style>
+</head>
+<body>
+    <div id="galeria">
+        <div><img src="Imagenes/deportes.png" width="600" height="400"><p>Imagen 1</p></div>
+        <div><img src="Imagenes/musica.png" width="600" height="400"><p>Imagen 2</p></div>
+        <div><img src="Imagenes/noticias.png" width="600" height="400"><p>Imagen 3</p></div>
+    </div>
+</body>
+</html>

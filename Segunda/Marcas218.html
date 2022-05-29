@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>Transicio 2</title>
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script language="JavaScript">
+    $(document).ready(function(){
+        $("#boton").click(function(){
+        })
+        $("#mostrar").click(function(event){
+            $(".boton").show(2000)
+            $(".imagen").show(2000)
+        })
+        $("#ocultar").click(function(event){
+            $(".imagen").hide(2000)
+            $(".boton").hide(2000)
+        })
+    });
+</script>
+<style type="text/css">
+</style>
+</head>
+<body>
+<input type="button" id="boton" value="Boton aparece y desaparece">
+<img src="Imagenes/fondo.jpg" class="imagen" height="150">
+<br><br><br><br>
+<input type="button" id="mostrar" value="Click para mostrar elementos">
+<br><br><br><br>
+<input type="button" id="ocultar" value="Click para ocultar elementos">
+</body>
+</html>

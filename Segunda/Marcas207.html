@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>Opacidad</title>
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script language="JavaScript">
+    $(document).ready(function(){
+        $("#ocultar").click(function(){
+            $("#rectangulo").fadeOut(4000);
+        });
+        $("#mostrar").click(function(){
+            $("#rectangulo").fadeIn(4000, "swing", function(){
+                alert("sa acabao")
+            });
+        });
+        $("#mostrar2").click(function(){
+            $("#rectangulo").fadeTo(4000, 0.5, function(){
+                alert("sa acabao")
+            });
+        });
+        $("#mostrarOcultar").click(function(){
+            $("#rectangulo").fadeToggle(4000, function(){
+                alert("sa acabao")
+            });
+        });
+    });
+</script>
+<style type="text/css">
+    #divCoordenadas{border: 1px solid #ccc; padding: 10px; width: 200px; text-align: center; border-radius: 5px; box-shadow: 1px 1px 10px #c0c0c0; float: left}
+    #divEstado{padding: 10px; text-align: center; width: 200px; border-radius: 5px; box-shadow: 1px 1px 10px #c0c0c0; float:right;}
+    #divScroll{margin: 20px; padding: 10px; border-radius: 5px; box-shadow: 1px 1px 10px #c0c0c0; float: right; height: 100px; overflow-y: scroll;}
+</style>
+</head>
+<body>
+    <div id="rectangulo" style="padding: 100px 10px 100px 10px; background-color:#000">Rectangulo de ejemplo que varia opacidad</div>
+    <input type="button" id="ocultar" value="Ocultar con fadeOut()">
+    <input type="button" id="mostrar" value="Mostrar con fadeIn()">
+    <input type="button" id="mostrar2" value="Mostrar con fadeTo()">
+    <input type="button" id="mostrarOcultar" value="Mostrar con fadeToggle()">
+</body>
+</html>

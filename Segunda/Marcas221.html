@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>Transicio 2</title>
+<link rel="stylesheet" href="Marcas221.css" type="text/css">
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script language="JavaScript">
+    $(document).ready(function(event){
+        $(".contenedor div").hide();
+        $(".contenedor div:first").show();
+        $("ul.tabs li:first").addClass("activa");
+        $("ul.tabs li").click(function(){
+            $("ul.tabs li").removeClass("activa");
+            $(this).addClass("activa");
+            $(".contenedor div").hide();
+            var parrafoActivar=$(this).find("a").attr("href");
+            $(parrafoActivar).fadeIn();
+            
+        });
+    });
+</script>
+<style type="text/css">
+</style>
+</head>
+<body>
+    <table align="center">
+        <tr>
+            <td>
+                <ul class="tabs">
+                    <li><a href="#tab1">Menu 1</a></li>
+                    <li><a href="#tab2">Menu 2</a></li>
+                    <li><a href="#tab3">Menu 3</a></li>
+                    <li><a href="#tab4">Menu 4</a></li>
+                </ul>
+                <div class="contenedor">
+                    <div id="tab1">
+                        CONTENIDO 1
+                    </div>
+                    <div id="tab2">
+                        CONTENIDO 2
+                    </div>
+                    <div id="tab3">
+                        CONTENIDO 3
+                    </div>
+                    <div id="tab4">
+                        CONTENIDO 4
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

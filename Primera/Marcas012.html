@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>Elementos objeto DOCUMENT</title>
+<style type="text/css">
+#cruz{position:absolute; top:200px}
+</style>
+<script language="JavaScript">
+var n =100;
+function mostrar(){
+	for(i=0; i < document.all.length; i++)
+		alert(document.all[i].tagName);
+	for(i=0; i < document.all.length; i++)
+		alert(document.images[i].src);
+}
+</script>
+</head>
+<body onload="mostrar()">
+<img src="imagenes/cruz.jpg" height="100"></div>
+<img src="imagenes/circulo.png" height="100"></div>
+</body>
+</html>

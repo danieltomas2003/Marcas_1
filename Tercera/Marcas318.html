@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>Bases de datos SQLite 3</title>
+
+<script type="application/javascript">
+    function cargar(){
+        var db = openDatabase("MiBaseDatos", "1.0", "Comentario sobre BD", 2 * 1024 * 1024)
+        db.transaction(function(tx){
+            tx.executeSql("CREATE TABLE IF NOT EXIST DATOS(codigo unique, nombre)");
+            
+            tx.executeSql("INSERT INTO DATOS(codigo, nombre) VALUES("+codigo.value+", '"+nombre.value+"')");
+
+            tx.executeSql("SELECT* FROM DATOS",[],function(tx, resultados){
+                contenido.innerHTML = "";
+                msg ="Número de filas: " + len;
+                for (let i = 0; i < len; i++) {
+                    msg += "<p>"+resultados.rows.item(i).codigo+"-"+resultados.rows.item(i).nombre+"</p>";
+                }
+                contenido.innerHTML = msg;
+            });
+
+        });
+
+    }
+    function leer(){
+        var db = openDatabase("MiBaseDatos", "1.0", "Comentario sobre BD", 2 * 1024 * 1024)
+        db.transaction(function(tx){
+            tx.executeSql("CREATE TABLE IF NOT EXIST DATOS(codigo unique, nombre)");
+
+            tx.executeSql("SELECT* FROM DATOS",[],function(tx, resultados){
+                contenido.innerHTML = "";
+                msg ="<h1 align=center>CONTENIDO DE DATOS</h1>";
+                for (let i = 0; i < resultados.rows.length; i++) {
+                    msg += "<tr><td>"+resultados.rows.item(i).codigo+"-"+resultados.rows.item(i).nombre+"</td><td>input type=button value=Eliminar onclick=eliminar("+ resultados.rows.item(i).codigo +")</td><td>input type=button value=Eliminar onclick=eliminar("+ resultados.rows.item(i).codigo +")</td></tr>";
+                }
+                contenido.innerHTML = msg + "</table>";
+            });
+        });
+
+    }
+    function eliminar(){
+        var db = openDatabase("MiBaseDatos", "1.0", "Comentario sobre BD", 2 * 1024 * 1024)
+        db.transaction(function(tx){
+            tx.executeSql("DELETE FROM DATOS WHERE codigo = " + codigo);
+            leer();
+        });
+
+    }
+
+</script>
+
+    
+</head>
+<body onload="leer()">
+    <form>
+        <table align="center" border="1">
+            <tr>
+                <td>Codigo: <input type="number" id="codigo"></td>
+                <td>Nombre: <input id="nombre"></td>
+            </tr>
+            <tr>
+               <td colspan=2 align="center"><button onclick="cargar()">cargar</button></td> 
+            </tr>
+        </table>
+    </form>
+    <div id="contenido" name="contenido"></div>
+</body>
+</html>

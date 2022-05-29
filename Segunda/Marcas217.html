@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>Transicio 2</title>
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script language="JavaScript">
+    $(document).ready(function(){
+
+    });
+</script>
+<style type="text/css">
+.primero, .segundo{display: none; padding: 30px; border:1px solid #333; background-color: gray; width: 200px;}
+#primero:hover .primero{display: block;}
+#segundo:hover .segundo{display: block;}
+</style>
+</head>
+<body>
+<ul>
+    <li id="primero">Mostrar el primer DIV oculto
+        <div class="primero">Contenido del primer DIV</div>
+    </li>
+    <li id="segundo">Mostrar el segundo DIV oculto
+        <div class="segundo">Contenido del segundo DIV</div>
+    </li>
+    <!--hover limita su actuaccion a los objetos declarados dentro del objeto sobre
+    el que se programa el evento-->
+</ul>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>Parar una Animación</title>
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script language="JavaScript">
+    var imagen=$("<img>",{src:"Imagenes/fondo.jpg", id:"imagen",
+        CSS:{"padding":"2px", "cursor":"pointer"},
+        click:function(e){document.location="Marcas212.html"}})
+    $(document).ready(function(){
+        $("#boton").click(function(){
+            $("body").append(imagen);
+        });
+    });
+</script>
+<style>
+    
+</style>
+</head>
+<body>
+    <input type="button" id="boton" value="Anadir">
+</body>
+</html>

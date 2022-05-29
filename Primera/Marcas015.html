@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>Mover Fotos</title>
+<style type="text/css">
+img{position:absolute}
+#imagen1{top:200px; left:150px}
+#imagen2{top:50px; left:300px}
+#imagen3{top:200px; left:450px}
+#imagen4{top:350px; left:300px}
+</style>
+<script language="JavaScript">
+	posiciones=new Array(0, 1, 2, 3);
+	
+	var EjeX=new Array(4);
+	var EjeY=new Array(4);
+
+	EjeX[0]=new Array=(150, 165, 180, 195, 210, 225, 240, 255, 270, 285, 300);
+	EjeX[1]=new Array=(300, 315, 330,345, 360, 375, 390, 405, 420, 435, 450);
+	EjeX[2]=new Array=(450, 435, 420, 405, 390, 375, 360, 345, 330, 315, 300);
+	EjeX[3]=new Array=(300, 285, 270, 255, 240, 225, 210, 195, 180, 165, 150);
+
+	EjeY[0]=new Array=(200, 185, 170, 155, 140, 125, 110, 95, 80, 65, 50);
+	EjeY[1]=new Array=(50, 65, 80, 95, 110, 125, 140, 155, 170, 185, 200);
+	EjeY[2]=new Array=(200, 215, 230, 245, 260, 275, 290, 305, 320, 335, 350);
+	EjeY[3]=new Array=(350, 335, 320, 305, 290, 275, 260, 245, 230, 215, 200);
+
+i=0;
+function rotar(){
+	for(x=1; x<=EjeX.length; x++)
+	{
+		document.getElementById("imagen"+x).style.left=EjeX[posiciones[x-1]][i];
+		document.getElementById("imagen"+x).style.left=EjeY[posiciones[x-1]][i];
+	}
+	i++;
+	if(i==11)
+	{
+		clearInterval(objeto);
+		i=0;
+		guardar=posiciones[0];
+		for(x=0; x<3;x++)
+			posiciones[x]=posiciones[x+1];
+		posiciones[3]=guardar;
+	}
+}
+</script>
+</head>
+
+<body>
+	<img src="imagenes/img1.jpg" id="imagen1" height="150" width="150">
+	<img src="imagenes/img2.jfif" id="imagen2" height="150" width="150">
+	<img src="imagenes/img3.jfif" id="imagen3" height="150" width="150">
+	<img src="imagenes/img4.png" id="imagen4" height="150" width="150">
+	<input type="button" value="Desplazar" onclick=objeto="setInterval('rotar()', 200)">
+</body>
+
+</html>

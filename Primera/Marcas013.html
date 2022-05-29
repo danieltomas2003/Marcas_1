@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>Mover OBJETOS</title>
+<style type="text/css">
+#cruz{position:absolute; top:200p; left:100}
+#circulo{position:absolute; top:500; left:400}
+</style>
+<script language="JavaScript">
+objeto = null;
+relieve = 2;
+function cargar(){
+	if(event.srcElement.tagName == "IMG"){
+		objeto = event.srcElement;
+		objeto.style.zIndex = relieve;
+		relieve++;
+	}
+}
+function mover(){
+	if(objeto != null){
+	objeto.style.left = event.x-50;
+	objeto.style.top = event.y-50;
+	}
+}
+function soltar(){
+	objeto = null;
+}
+</script>
+</head>
+<body onmousedown="cargar()" onmousemove="mover(); event.returnValue=false" onmouseup="soltar()">
+<img id="cruz" src="imagenes/cruz.jpg" height=100>
+<img id="circulo" src="imagenes/circulo.png" height=100>
+</body>
+</html>

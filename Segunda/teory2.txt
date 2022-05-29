@@ -1,0 +1,95 @@
+OBJETOS
+    se nombran como: $(objeto)
+    $("objeto")=html
+    $("#objeto")=id
+    $("objeto")=class
+
+FUNCIONES  
+{
+    $().ready(funcion)
+
+    $().click(funcion)
+    $().mousemove(funcion)
+    $().mouseover(funcion)
+    $().mouseout(funcion)
+    $().keydown(funcion)
+    $().keyup(funcion)
+
+    $().slideUp(tiempoEjecucion/velocidadEjecucion)
+    $().slideDown(tiempoEjecucion/velocidadEjecucion)
+    $().slideToggle(tiempoEjecucion/velocidadEjecucion)
+    $().fadeOut(tiempoEjecucion, modo(opcional), funcion)
+    $().fadeIn(tiempoEjecucion, modo(opcional), funcion)
+    $().fadeTo(tiempoEjecucion, opacidad, funcion)
+    $().fadeToggle(tiempoEjecucion, funcion)
+
+    $().text("texto")
+    $().html(nuevoValor)
+    $().css(propiead:"valor")
+    $().val("valor"/numero)
+
+    $().animate({propieades},tiempoEjecucion)
+    $().on(evento)
+    $().is(identificador)
+    $().next(identificador)
+    $().preventDefault()
+    $().find(objeto)
+
+    $().show(tiempoEjecucion, funcion)
+    $().hide(tiempoEjecucion, funcion)
+
+    $().addClass(nombreClase)
+    $().removeClass(nombreClase)
+
+    $().appendTo("identificador:cual")
+    $().prependTo(identificador:cual)
+    $().append(objetoAñadido)
+    $().attr(atributoObjeto, valor)
+    $().removeAttr(atributoObjeto)
+
+    $().match(any)
+    $().end()
+    $().stop()
+}
+ESTILOS
+
+    color: color;
+    background-color: color;
+
+    border: (numero)px estilo(outset) color;
+    box-shadow: (numero)px (numero)px (numero)px color;
+    text-shadow: (numero)px (numero)px (numero)px color;
+
+    padding: (numero)px;
+    padding-top: (numero)px;
+    margin: (numero)px;
+    margin-bottom: (numero)px;
+    border-radius: (numero)px (numero)px (numero)px (numero)px;
+
+    top: (numero)px;
+    left: (numero)px;
+    width:(numero)px;
+    height: (numero)px;
+
+    position: relative/absolute/sticky/fixed;
+    display: none/block/inline-block;
+    list-style: none;
+    list-style-type: none;
+    text-align: end/left/right/center/justify/match-parent;
+    cursor: tipoCursor;
+    
+    transition: allease tiempoEjecucion;
+    transform: scale(numero,numero)/funcion;
+    transform-style: flat/preserve-3d;
+
+    animation-duration: tiempoEjecucion;
+    z-index: numero;
+    
+    animation:nombreAnimacion ease tiempoEjecucion forwards; 
+    @keyframes nombreAnimacion{ 
+        0%{}
+        50%{}
+        100%{}
+    }
+    backface-visibility: visible/hidden;
+}

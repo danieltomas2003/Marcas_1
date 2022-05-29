@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>Eventos de raton 2</title>
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script language="JavaScript">
+    $(document).ready(function(){
+        $(document).on("mousemove", function(e){
+            $("#divCoordenadas").html("<strong>"+e.pageX+"</strong>-<strong>"+e.pageY+"</strong>")
+        });
+        $(document).on("contextmenu", function(e){
+            e.preventDefault();
+            $("#divEstado").html("<strong>Click derecho</strong>")
+        });
+        $(document).on("click", function(e){
+            $("#divEstado").html("<strong>Click izquierdo</strong>")
+        })
+        $("#divScroll").on("scroll", function(e){
+            $("#divEstado").html("<strong>Scroll</strong>")
+        })
+    });
+</script>
+<style type="text/css">
+    #divCoordenadas{border: 1px solid #ccc; padding: 10px; width: 200px; text-align: center; border-radius: 5px; box-shadow: 1px 1px 10px #c0c0c0; float: left}
+    #divEstado{padding: 10px; text-align: center; width: 200px; border-radius: 5px; box-shadow: 1px 1px 10px #c0c0c0; float:right;}
+    #divScroll{margin: 20px; padding: 10px; border-radius: 5px; box-shadow: 1px 1px 10px #c0c0c0; float: right; height: 100px; overflow-y: scroll;}
+</style>
+</head>
+<body>
+    <div id="divCoordenadas"></div>
+    <div id="divEstado"></div>
+    <div id="divScroll">
+    <p>Para no alargar más el misterio, os desvelamos el nombre del híbrido enchufable 
+        que triunfa en España: Peugeot 3008 Hybrid. La versión electrificada del SUV 
+        francés es el gran referente entre los vehículos PHEV (plug-in hybrid electric 
+        vehicle) que se comercializan en nuestro país. En noviembre volvió a ser el 
+        híbrido enchufable más vendido en España con 400 unidades entregadas, 
+        casi una tercera parte del total de matriculaciones del 3008 durante ese mismo 
+        mes (1.290 unidades).</p>
+
+    <p>Desde enero de 1961, cuando el Ebro experimentó la máxima crecida de los últimos 
+        cien años, la ribera aragonesa ha sufrido otras diez inundaciones: noviembre 
+        de 1966, febrero de 1978, diciembre de 1980, enero de 1981, febrero de 2003, 
+        abril de 2007, enero de 2013, marzo de 2015, abril de 2018 y diciembre de 2021, 
+        que está teniendo lugar ahora. </p>
+
+    <p>En apenas unas semanas, cuando entre 2022, España se convertirá en el primer país 
+        europeo en contabilizar oficialmente todos los feminicidios. Será entonces cuando 
+        el Gobierno despliegue una nueva estadística en la que, además de los casos 
+        mortales de violencia de género dentro de la pareja o la expareja, se registrarán 
+        también los feminicidios sexuales, familiares, sociales o vicarios. Lo hace 
+        después de un proceso de definición de las categorías en el que han consultado con 
+        diferentes organismos, entre ellos, al CGPJ o el Instituto Europeo de Igualdad de 
+        Género.</p>
+
+    <p>El coronavirus seguirá mutando y es algo a lo que hay que acostumbrarse. Los 
+        expertos van más allá y advierten de que toparse con una variante cuya clínica 
+        parece más leve (como parece el caso de ómicron) no significa que dentro de unas 
+        semanas o meses no vaya a aparecer otra variante que pueda ser más virulenta. </p>
+
+    <p>Hace unas semanas, Sudáfrica dio la voz de alerta por la aparición de ómicron. 
+        Aquello hizo saltar todas las alarmas. La llegada de las bajas temperaturas, del 
+        puente de diciembre y de esta nueva variante se ha traducido en un gran repunte de 
+        la incidencia acumulada en España a las puertas de la Navidad. Aunque los síntomas de 
+        ómicron parecen más leves, lo que sí que se tiene claro es que es mucho más 
+        transmisible y que, en poco tiempo será la versión dominante en España.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>Editor con HTML5 y JavaScript</title>
+<link rel="stylesheet" href="Estilos3.css">
+<script language="JavaScript" src="js/Editor.js">
+      
+</script>
+</head>
+<body>
+    <div id="principal">
+        <h2>Mensajes publicados</h2>
+        <div id="mensajes"></div>
+        <div id="editor">
+            <h3>Publica aqui tu mensaje</h3>
+            <div id="botones">
+                <img src="Imagen/iconos/negrita.jpg" class="boton" onclick="negrita()">
+                <img src="Imagen/iconos/cursiva.jpg" class="boton" onclick="cursiva()">
+                <img src="Imagen/iconos/subrayado.jpg" class="boton" onclick="subrayado()">
+                <img src="Imagen/iconos/alini.jpg" class="boton" onclick="alinIz()">
+                <img src="Imagen/iconos/alinc.jpg" class="boton" onclick="alinCe()">
+                <img src="Imagen/iconos/alind.jpg" class="boton" onclick="alinDe()">
+                <img src="Imagen/iconos/alinf.jpg" class="boton" onclick="alinJu()">
+                <img src="Imagen/iconos/lno.jpg" class="boton" onclick="li1()">
+                <img src="Imagen/iconos/lor.jpg" class="boton" onclick="li2()">
+                <img src="Imagen/iconos/supi.jpg" class="boton" onclick="supIn()">
+                <img src="Imagen/iconos/subi.jpg" class="boton" onclick="subIn()">
+                <img src="Imagen/iconos/fco.jpg" class="boton" onclick="fontColor()">
+                <img src="Imagen/iconos/bco.jpg" class="boton" onclick="backColor()">
+                <img src="Imagen/iconos/imagen.jpg" class="boton" onclick="insIm()">
+                <img src="Imagen/iconos/hipervinculo.jpg" class="boton" onclick="hipervinculo()">
+            </div>
+            <div id="contenido" contenteditable="true"></div>
+            <input type="button" value="PUBLICAR" onclick="publicar()">
+        </div>
+    </div>
+</body>
+</html>

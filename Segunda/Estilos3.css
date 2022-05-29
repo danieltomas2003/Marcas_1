@@ -1,0 +1,98 @@
+body{
+    margin:0;
+}
+#barraHorizontal{ 
+    width:960px;
+    height: 30px;
+    background-color: #4ba;
+    margin:auto;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 0 5px #000 inset; 
+    position:relative;
+    z-index: 2; 
+}
+
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#menu>li{ 
+    display:inline-block;
+    padding: 5px;
+    margin: 0 10px 0 10px; 
+
+}
+
+.panel{ 
+    background-color: rgb(7%, 42%,38%); 
+    color:rgb(233, 14, 14); 
+    width: 150px; 
+    height: 200px;
+    border-radius: 20px;
+    box-shadow: 0 0 5px #000 inset, 0 0 5px #000;
+    padding-top: 100px;
+    position: relative; 
+    top:-250px; 
+    transition: all ease 2s; 
+    transform-style: preserve-3d;
+    
+}
+
+.back>ul>li{ 
+    background-color: #90ddd2; 
+    width: 140px;
+    margin-top: 30px;
+    padding:5px; 
+    box-shadow: 0 0 3px #136C60 insert; 
+}
+
+.back{ 
+    position:absolute; 
+    top: 20px;
+    transform: rotateY(180deg)translateZ(100px);
+}
+
+.back>ul>li:hover{
+    transform: scale(1.2);
+    cursor:pointer;
+    box-shadow: 0 5px 0 hsl(171, 53%, 42%), 0 10px 10px #000, 0 0 3px #136C60 inset ; 
+    border-radius: 3px;
+}
+
+.back>ul>li:active{
+    transform: scale(1.2) translateY(3px); 
+    box-shadow: 0 3px 0 hsl(171, 53%, 42%), 0 10px 10px #000, 0 0 3px #136C60 inset ; 
+    border-radius: 3px;
+}
+
+.panel:hover{
+    animation:animacion ease 2s forwards; 
+
+}
+@keyframes animacion{ 
+    0%{
+        top:-250px;
+    }
+    50%{
+        top:-20px;
+        transform: rotateZ(0deg);
+    }
+    100%{
+        top:-20px;
+        transform: rotateY(180deg); 
+    }
+
+
+}
+
+.front>img{
+    margin-bottom: 50px;
+}
+
+.front{
+    backface-visibility: hidden; 
+}

@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>Bases de datos SQLite</title>
+
+<script type="application/javascript">
+    function cargar(){
+        var db = openDatabase("MiBaseDatos", "1.0", "Comentario sobre BD", 2 * 1024 * 1024)//una función abre una vase de datos, si no existe la crea
+        db.transaction(function(tx){
+            tx.executeSql("CREATE TABLE IF NOT EXISTS DATOS(codigo unique, nombre)");//los datos son todo strings
+            tx.executeSql("INSERT INTO DATOS(codigo, nombre) VALUES(1, 'Agustin')");
+            tx.executeSql("INSERT INTO DATOS(codigo, nombre) VALUES(2, 'Gorka')");
+        });
+
+    }
+    
+
+</script>
+
+    
+</head>
+<body onload = "cargar()">
+</body>
+</html>

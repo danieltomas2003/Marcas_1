@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>Variable sessionStorage</title>
+<script language="JavaScript">
+    function manipular(){
+        contenido.innerHTML = sessionStorage.length; //Longitud o numero de elementos del vector.
+        sessionStorage.setItem("Antonio", 18); //Metodo para añadir valores.
+        contenido.innerHTML += "<br>"+sessionStorage.length;
+        sessionStorage.key(0); //Metodo para acceder a la clave de un objeto del vector.
+        contenido.innerHTML += "<br>"+sessionStorage.key(1);
+        sessionStorage.getItem(0); //Metodo que devuelve el valor de la clave introducida.
+        contenido.innerHTML += "<br>"+sessionStorage.getItem("Antonio");
+        sessionStorage.setItem("Juan", 20);
+        contenido.innerHTML += "<br>"+sessionStorage.length;
+        contenido.innerHTML += "<br>"+sessionStorage.key(1);
+        contenido.innerHTML += "<br>"+sessionStorage.getItem("Juan");
+        sessionStorage.removeItem("Antonio"); //Metodo que elimina el objeto especificado
+        contenido.innerHTML += "<br>"+sessionStorage.length;
+        contenido.innerHTML += "<br>"+sessionStorage.key(1);
+        contenido.innerHTML += "<br>"+sessionStorage.key(0);
+        sessionStorage.clear();//Metodo que elimina todos los objetos de la variable de sesion
+        contenido.innerHTML += "<br>"+sessionStorage.length;
+    }
+</script>
+</head>
+<body onload="manipular()">
+    <div id="contenido">
+
+    </div>
+</body>
+</html>

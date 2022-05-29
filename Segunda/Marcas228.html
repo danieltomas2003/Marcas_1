@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>Formuario</title>
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<link rel="stylesheet" href=css/jquery-ui.structure.css/>
+    <style>
+        #papelera1{
+            position: absolute; left: 170px; top: 70px;
+        }
+        #papelera2{
+            position: absolute; left: 270px; top: 70px;
+        }
+        #papelera3{
+            position: absolute; left: 370px; top: 70px;
+        }
+        #papelera4{
+            position: absolute; left: 470px; top: 70px;
+        }
+        #papelera5{
+            position: absolute; left: 570px; top: 70px;
+        }
+    </style>
+    <script languaje="javaScript">
+        $(document).ready(function(){
+            tope=0;
+            izquierda=0;
+            $(".dibujo").draggable({
+                start:function(event, ui){
+                    tope=this.style.top;
+                    izquierda=this.style.left;
+                },
+                stop:function(event, ui){
+                    this.style.top=tope;
+                    this.style.left=izquierda;
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="papelera1" class="dibujo"><img src="Imagenes/papelera.png" width="100"></div>
+    <div id="papelera2" class="dibujo"><img src="Imagenes/papelera.png" width="100"></div>
+    <div id="papelera3" class="dibujo"><img src="Imagenes/papelera.png" width="100"></div>
+    <div id="papelera4" class="dibujo"><img src="Imagenes/papelera.png" width="100"></div>
+    <div id="papelera5" class="dibujo"><img src="Imagenes/papelera.png" width="100"></div>
+</body>
+</html>

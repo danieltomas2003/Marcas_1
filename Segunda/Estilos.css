@@ -1,0 +1,35 @@
+ul{
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+#menu{
+    width: 200px;
+}
+#menu>li{
+    background-color: aqua;
+    border: 1px outset black;
+    padding: 5px;
+    position: relative;
+
+}
+.submenu{
+    position: absolute;
+    top: 0;
+    left: 199px;
+    display: none;
+}
+.submenu>li{
+    background-color: blue;
+    border: 1px outset black;
+    width: 180px;
+    padding: 2px;
+}
+#menu li:hover{
+    background-color:cadetblue;
+    color: white;
+    cursor: pointer;
+}
+#menu li:hover ul{
+    display:block;
+}

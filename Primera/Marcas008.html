@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>Pruebas de estilos II</title>
+<style type="text/css">
+h1{margin-left:0.25in; color:navy; font-size:24pt}
+h2{margin-left:0.25in;color:red;font-size:18pt}
+p{margin-left:0.75in;margin-right:5.5in;color:blue;font-size:12pt}
+</style>
+</head>
+<script language="JavaScript">
+function ampliar(){
+	if(parrafo2.style.display == "")
+		parrafo2.style.display="none";
+	else
+		parrafo2.style.display="";
+}
+function ampliar2(){
+	if(text.style.display == "")
+		text.style.display="none";
+	else
+		text.style.display="";
+}
+</script>
+<body>
+<h1 onclick="ampliar()">Reemplazando HTML dinamicamente</h1>
+<h2 onclick="ampliar2()" id="parrafo2" style="display:none">Esto es la segunda cabecera</h2>
+<p id="text" style="display:none">
+Esto es lo que pasa si se hace click sobre ambas cabeceras. 
+Es similar al software de presentacion, en el que el contenido se muestra segun las acciones del usuario.
+</p>
+</body>
+</html>

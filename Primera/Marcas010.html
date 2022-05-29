@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>Cambiar de clase</title>
+<style type="text/css">
+.bloque1{position:absolute; width:300px; top:50px; left:20px}
+.bloque2{position:absolute; width:300px; top:50px; left:600px}
+</style>
+<script language="JavaScript">
+function cambiar(){
+	if(b1.className=="bloque1"){
+		b2.className="bloque1";
+		b1.className="bloque2";
+	}else{
+		b2.className="bloque2";
+		b1.className="bloque1";
+	}
+}
+</script>
+</head>
+<body>
+<div id="b1" class="bloque1">
+<img src="imagenes/cruz.jpg" heigth="10">
+Patíbulo formado por un madero hincado verticalmente y atravesado en su parte superior por otro más corto, 
+en los cuales se clavaban o sujetaban las manos y pies de los condenados a este suplicio o igul no.
+</div>
+<div id="b2" class="bloque2">
+<img src="imagenes/circulo.png" heigth="10">
+Patíbulo formado por un madero hincado verticalmente y atravesado en su parte superior por otro más corto, 
+en los cuales se clavaban o sujetaban las manos y pies de los condenados a este suplicio, tal vez si u que.
+</div>
+<input type="button" value="Intercambio" onclick="cambiar()">
+</body>
+</html>
