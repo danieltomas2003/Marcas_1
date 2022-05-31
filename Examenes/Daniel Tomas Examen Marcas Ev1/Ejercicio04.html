@@ -1,0 +1,52 @@
+<html>
+<head>
+<style type="text/css">
+.imagen1{position:absolute}
+.imagen2{position:absolute}
+.imagen3{position:absolute}
+.imagen4{position:absolute}
+#imagen1{left:50}
+#imagen2{left:300}
+#imagen3{left:550}
+#imagen4{left:800}
+</style>
+<title>Ejercicio 4</title>
+<script language="JavaScript">
+function desplazar(){
+	objeto=event.srcElement;
+	if (objeto.className=="imagen1")	
+		if (parseInt(imagen1.style.top)==100){
+			imagen1.style.top=400;
+		}else{
+			imagen1.style.top=100;
+		}
+	if (objeto.className=="imagen2")	
+		if (parseInt(imagen2.style.top)==100){
+			imagen2.style.top=400;
+		}else{
+			imagen2.style.top=100;
+		}
+	if (objeto.className=="imagen3")	
+		if (parseInt(imagen3.style.top)==100){
+			imagen3.style.top=400;
+		}else{
+			imagen3.style.top=100;
+		}
+	if (objeto.className=="imagen4")	
+		if (parseInt(imagen4.style.top)==100){
+			imagen4.style.top=400;
+		}else{
+			imagen4.style.top=100;
+		}
+
+}
+</script>
+</head>
+<body onclick="desplazar()">
+	<h1 align="center">DESPLAZAR CON CLICK</h1>
+	<img src="imagenes/0.jpg" class="imagen1" id="imagen1" height="150" width="150" style="top:100">
+	<img src="imagenes/1.jpg" class="imagen2" id="imagen2" height="150" width="150" style="top:100">
+	<img src="imagenes/2.jpg" class="imagen3" id="imagen3" height="150" width="150" style="top:100">
+	<img src="imagenes/3.jpg" class="imagen4" id="imagen4" height="150" width="150" style="top:100">
+</body>
+</html>

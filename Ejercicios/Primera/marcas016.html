@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>Mover Fotos</title>
+<style type="text/css">
+	img{position:absolute;}
+</style>
+<script language="javascript">
+	var puntero = null;
+	relieve = 2;
+	function cargar() {
+		if (event.srcElement.className == "mov") {
+			puntero = event.srcElement;
+			puntero.style.zIndex = relieve;
+			relieve++;
+		}
+	}
+	function mover() {
+		if (puntero != null) {
+			puntero.style.left = event.x-75;
+			puntero.style.top = event.y-75;
+		}
+	}
+	function soltar() {
+		if (!((parseInt(puntero.style.left)+puntero.width)<parseInt(papelera.style.left)) || (parseInt(puntero.style.left))>(parseInt(papelera.style.left)+papelera.width) || ((parseInt(puntero.style.top)+puntero.height)<parseInt(papelera.style.top)) || (parseInt(puntero.style.top)>(parseInt(papelera.style.otp)+papelera.height))) {
+			puntero.style.display="none";
+			if (puntero.id == "cerilla")
+				papelera.src="Imagenes/explosion.png";
+		}
+		puntero=null;
+	}
+</script>
+</head>
+<!-- returnValue=false se pone para que termine cada vez el evento onmousemove porque sino funciona mal-->
+<body onmousedown="cargar()" onmousemove="mover(); event.returnValue=false" onmouseup="soltar()">
+<img src="imagenes/cruz.jpg" id="papelera" height="100" width="100" style="left:500; top:400">
+<img src="imagenes/img1.jpg" class="mov" id="imagen1" height="150" width="150" style="left:50; top:50">
+<img src="imagenes/foto.jpg" class="mov" id="imagen2" height="150" width="150" style="left:250; top:50">
+<img src="imagenes/img3.jfif" class="mov" id="imagen3" height="150" width="150" style="left:450; top:50">
+<img src="imagenes/img4.png" class="mov" id="imagen4" height="150" width="150" style="left:650; top:50">
+<img src="imagenes/cerilla.png" class="mov" id="cerilla" height="150" width="150" style="left:1000; top:50">
+
+</body>
+</html>

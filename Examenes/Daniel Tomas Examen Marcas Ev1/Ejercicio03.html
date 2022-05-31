@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<title>Ejercicio 3</title>
+		<script language="Javascript">
+			posiciones = new Array(0,1,2,3);
+			n=0;
+			function cambiar() {
+				document.getElementById("imagen1").src = "imagenes/"+(n+1)%4+".jpg";
+				document.getElementById("imagen2").src = "imagenes/"+(n+2)%4+".jpg";
+				document.getElementById("imagen3").src = "imagenes/"+(n+3)%4+".jpg";
+				document.getElementById("imagen4").src = "imagenes/"+(n+4)%4+".jpg";
+				n++;
+				setTimeout("cambiar()",1000);
+			}
+		</script>
+	</head>
+	<!-- onload="setInterval('cambiar()',1000)"-->
+	<body onload="cambiar()">
+		<table border="2" width="200" height="">
+			<tr>
+				<td>
+					<img src=imagenes/0.jpg id="imagen1" width="200" height="200">
+				</td>
+				<td>
+					<img src=imagenes/1.jpg id="imagen2" width="200" height="200">
+				</td>
+				<td>
+					<img src=imagenes/2.jpg id="imagen3" width="200" height="200">
+				</td>
+				<td>
+					<img src=imagenes/3.jpg id="imagen4" width="200" height="200">
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

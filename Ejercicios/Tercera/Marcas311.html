@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>Canvas 5</title>
+<link rel="stylesheet" href="Estilos.css">
+<script language="JavaScript">
+    window.onload = function(){
+        var ctx = canvas.getContext("2d");
+        for(var i=0;i<4;i++)
+            for(var j=0;j<3;j++){
+                var ctx = canvas.getContext("2d");
+                ctx.fillStyle = '#000';
+                ctx.beginPath();
+                ctx.arc(75,75,50,0,Math.PI*2,true);
+                ctx.fill();
+                ctx.fillStyle = '#FFF';
+                ctx.beginPath();
+                ctx.arc(75,75,35,0,Math.PI,false);
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(60,65,5,0,Math.PI*2,false);
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(90,65,5,0,Math.PI*2,false);
+                ctx.fill();
+            }
+    }
+</script>
+</head>
+<body>
+    <canvas id="canvas" width="350" height="350"></canvas>
+</body>
+</html>

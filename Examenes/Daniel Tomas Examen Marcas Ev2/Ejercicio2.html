@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>Ejercicio2</title>
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script language="JavaScript">
+
+    $(document).ready(function(event){ 
+        setInterval(function(){
+            $("#semaforo div:first-child").css("display", "none").next("div")
+            .css("display", "block").end().appendTo("#semaforo");
+        },4000)
+    });
+</script>
+<style>
+    
+</style>
+</head>
+<body>
+    <div id="semaforo" style="background-color: black; height: 600px; width: 200px; border-radius: 10px 10px 10px 10px; position: relative; top: 0px;">
+        <div id="rojo" class="luz" style="background-color: red; height: 180px; width: 200px; border-radius: 10px 10px 10px 10px; position: relative; top: 0px; display: block;"></div>
+        <div id="amarillo" class="luz" style="background-color: yellow; height: 180px; width: 200px; border-radius: 10px 10px 10px 10px; position: relative; top: 210px; display: none;"></div>
+        <div id="verde" class="luz" style="background-color: green; height: 180px; width: 200px; border-radius: 10px 10px 10px 10px; position: relative; top: 420px; display: none;"></div>
+    </div>
+</body>
+</html>

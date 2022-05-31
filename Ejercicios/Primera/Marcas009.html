@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>Tres en raya</title>
+<style type="text/css">
+.val{background-color:yellow; width:30; height:35; text-align:center}
+.noval{background-color:green; width:30; height:35; text-align:center}
+</style>
+</head>
+</style>
+<script language="JavaScript">
+function cambiar(){
+	//alert(event.srcElement.className); nos devuelve la propiedad sobre la que ocurre el evento
+	objeto = event.srcElement;
+	if(objeto.className=="val"){
+		objeto.className="noval";
+		n++; //n = (n+1)%2;
+		if (n%2 == 1)
+			objeto.innerHTML = "<img src=Imagenes/cruz.jpg width=30 height=30>";
+		else
+			objeto.innerHTML = "<img src=Imagenes/circulo.png width=30 height=30>";
+	}
+	
+}
+</script>
+<body onclick="cambiar()">
+<h1 align="center">Juego tres en raya</h1>
+<table align="center" border="5" cellpading="0" cellspacing="5">
+	<tr>
+		<td class="val"></td><td class="val"></td><td class="val"></td>
+	</tr>
+	<tr>
+		<td class="val"></td><td class="val"></td><td class="val"></td>
+	</tr>
+	<tr>
+		<td class="val"></td><td class="val"></td><td class="val"></td>
+	</tr>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>Ejercicio Examen MArcas</title>
+<link rel="stylesheet" href="css/Estilillo.css">
+<script language="JavaScript">
+    function enviar(n, a){
+        sessionStorage.setItem(n.value, a.value);
+        if(sessionStorage.length == 0)
+            cont_sessionStorage.innerHTML = "NO HAY NADA :)"
+        else
+            cont_sessionStorage.innerHTML = "<table width=200 border=1><tr><th>NOMBRE</th><th>APELLIDO</th></tr>";
+            for(i=0;i<sessionStorage.length; i++){
+                cont_sessionStorage.innerHTML += "<table width=200 border=1><tr><td>"+sessionStorage.key(i)+"</td><td>"+sessionStorage.getItem(sessionStorage.key(i))+"</td></tr></table>";
+            }
+    };
+    function meter(){
+        var db = openDatabase("MiBaseDatos", "1.0", "Comentario sobre BD", 2 * 1024 * 1024)
+        db.transaction(function(tx){
+            tx.executeSql("CREATE TABLE IF NOT EXISTS EXAMEN(nombre, apellido)");
+            for(i=0;i<sessionStorage.length; i++){
+            tx.executeSql("INSERT INTO EXAMEN(nombre, apellido) VALUES('"+sessionStorage.key(i)+"', '"+sessionStorage.getItem(sessionStorage.key(i))+"')");
+            }
+            mostrar();
+        });
+        
+    };
+    function mostrar(){
+        var db = openDatabase("MiBaseDatos", "1.0", "Comentario sobre BD", 2 * 1024 * 1024); 
+                db.transaction(function(tx){
+                    tx.executeSql("CREATE TABLE IF NOT EXISTS EXAMEN(nombre, apellido)");
+                    tx.executeSql("SELECT * FROM EXAMEN", [], function(tx, resultados){
+                        var tabla_cont = "<h3>CONTENIDO DATOS</h1><table border=1>";
+                        for (i = 0; i < resultados.rows.length; i++){
+                            tabla_cont += "<tr><td><b>" + resultados.rows.item(i).nombre + "</b>-" + resultados.rows.item(i).apellido + "</td></tr>";
+                        }
+                        cont_tabla.innerHTML = tabla_cont + "</table>";
+                    });
+                });   
+                sessionStorage.clear();//Asi evito que la sessionçstorage meta valores ya antes metidos en la tabla :)
+    };
+</script>
+</head>
+<body>
+    Nombre:<input type="text" id="nombre">
+    Apellido:<input type="text" id="apellido">
+    <input type="button" value="enviar" onclick="enviar(nombre, apellido)">
+    <div id="cont_sessionStorage"></div>
+    <input type="button" value="meterSQLite" onclick="meter()">
+    <div id="cont_tabla"></div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>Ejercicio3</title>
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script language="JavaScript">
+    $(document).ready(function(event){
+        
+    });
+</script>
+<style>
+    .div{
+        transform: rotateY(180deg)
+    };
+    .div:hover{
+        animation:animacion ease 2s forwards;
+}
+@keyframes animacion{  
+    0%{
+    }
+    50%{
+        transform: rotateY(180deg);
+    }
+    100%{ 
+    }
+}
+</style>
+</head>
+<body>
+    <table align="center" border="4" cellpadding="50" cellspacing="5">
+        <tr>
+            <td class="celda" bgcolor="burlywood">
+                <div id="parrafo1" class="div" style="background-color: black; width: 300px; color: aliceblue ; text-align: center; font-size: 50;">Uno</div>
+            </td> 
+            <td class="celda" bgcolor="burlywood">
+                <div id="parrafo2" class="div" style="background-color: black; width: 300px; color: aliceblue ; text-align: center; font-size: 50;">Dos</div>
+            </td> 
+            <td class="celda" bgcolor="burlywood">
+                <div id="parrafo3" class="div" style="background-color: black; width: 300px; color: aliceblue ; text-align: center; font-size: 50;">Tres</div>
+            </td> 
+        </tr>
+    </table>
+</body>
+</html>

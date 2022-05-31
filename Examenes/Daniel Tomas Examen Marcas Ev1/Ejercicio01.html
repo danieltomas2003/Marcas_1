@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>Ejercicio 1</title>
+<style type="text/css">
+</style>
+<script language="JavaScript">
+    var color = "yellow"
+    function accion()
+    {
+        if(event.srcElement.className=="colores")
+            color = event.srcElement.style.background;
+        else
+            event.srcElement.style.background = color;
+    }
+</script>
+</head>
+<body onclick="accion()">
+    <table align="center" border="4" cellpadding="40" cellspacing="5">
+        <tr>
+            <td class="pint"></td> <td class="pint"></td> <td class="pint"></td> <td class="pint"></td>
+        </tr>
+        <tr>
+            <td class="pint"></td> <td class="pint"></td> <td class="pint"></td> <td class="pint"></td>
+        </tr>
+        <tr>
+            <td class="pint"></td> <td class="pint"></td> <td class="pint"></td> <td class="pint"></td>
+        </tr>
+        <tr>
+            <td class="colores" style="background:yellow"></td> <td class="colores" style="background: violet;"></td> <td class="colores" style="background: turquoise;"></td><td class="colores" style="background: red;"></td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,42 @@
+
+<html>
+	<head>
+		<title>Ejercicio examen: Calculadora</title>
+		<script language="Javascript">
+			function calcular() {
+				switch (operacion.value) {
+					case "+":
+						//Si pusieramos id="resultado" en el td pondriamos esto: 
+						resultado.innerHTML = parseInt(oper1.value)+parseInt(oper2.value);
+						break;
+					case "-":
+						resultado.innerHTML = parseInt(oper1.value)-parseInt(oper2.value);
+						break;
+					case "*":
+						resultado.innerHTML = parseInt(oper1.value)*parseInt(oper2.value);
+						break;
+					case ":":
+						resultado.innerHTML = parseInt(oper1.value)/parseInt(oper2.value);
+						break;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<table border="2" align="center" width="100%">
+			<tr>
+				<td>
+					<input type="text" id="oper1">
+					<select name="operacion" id="operacion">
+						<option value="+">+</option>
+						<option value="-">-</option>
+						<option value="*">*</option>
+						<option value=":">:</option>
+					</select>
+					<input type="text" id="oper2">
+					<input type="button" value="=" onclick="calcular()"></td>
+				<td id="resultado" width="30%"></td>
+			</tr>
+		</table>
+	</body>
+</html>

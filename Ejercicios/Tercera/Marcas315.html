@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Canvas 10</title>
+        <script type="application/javascript">
+            window.onload = function(){
+                var ctx = canvas.getContext("2d");
+                var gradiente = ctx.createRadialGradient(canvas.width/2,canvas.height/2,0,canvas.width/2, canvas.height/2,canvas.height/2);
+                //var gradiente = ctx.createRadialGradient(canvas.width/2,canvas.height/2,100,canvas.width/20, canvas.height/2,canvas.height/2);
+
+                gradiente.addColorStop(0,'#fff');
+                gradiente.addColorStop(1,'#000');
+
+                ctx.fillStyle = gradiente;
+                ctx.fillRect(0,0,canvas.width,canvas.height);
+            }
+        </script>
+    </head>
+    <body>
+        <canvas id="canvas" width="350" height="350"/>
+    </body>
+</html>

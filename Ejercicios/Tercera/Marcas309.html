@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Canvas 3</title>
+        <script type="application/javascript">
+            window.onload = function(){
+                var ctx = canvas.getContext("2d"); //devuelve un puntero
+                ctx.beginPath();
+                ctx.moveTo(25,25);
+                ctx.lineTo(105,25);
+                ctx.lineTo(25,105);
+                ctx.closePath();
+                ctx.fill(); // si fuese stroke se dibujaria solo el contorno
+                ctx.beginPath();
+                ctx.moveTo(105,105);
+                ctx.lineTo(105,27);
+                ctx.lineTo(27,105);
+                ctx.closePath();
+                ctx.stroke();
+            }
+        </script>
+    </head>
+    <body>
+        <canvas id="canvas" width="150" height="150"/>
+    </body>
+</html>

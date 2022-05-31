@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title>Reloj digital</title>
+		<script language="Javascript">
+			function reloj() {
+					var fecha = new Date();
+					var hora = fecha.getHours();
+					var minuto = fecha.getMinutes();
+					var segundo = fecha.getSeconds();
+					var horaStr = "";
+
+					// la siguiente instruccion se llama 'si inmediato'
+					horaStr = ((hora < 10)?"0":"")+hora;
+					horaStr += ((minuto < 10)?":0":":")+minuto;
+					horaStr += ((segundo < 10)?":0":":")+segundo;
+
+					caja.value=horaStr;
+					// funcion setTimeout ejecuta el primer parametro una sola vez
+					setTimeout("reloj()",1000);
+					// hace el mismo efecto que setInterval porque estamos llamando recursivamente a la propia funcion otra vez al final. 
+					// es mejor que usar setInterval porque no hay que esperar los primeros 1000ms
+			}
+		</script>
+	</head>
+	<!-- onload es causado al iniciar la pagina la primera vez-->
+	<body onload="reloj()">
+		<h1 align="center">Reloj digital Javascript</h1>
+		<center>
+			<!-- no suele usarse la marca "center" porque todo queda centrado-->
+			<input id="caja" size="8">
+		</center>
+	</body>
+</html>

@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>Ejercicio1</title>
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script language="JavaScript">
+    $(document).ready(function(){
+        $("#persiana").click(function(event){
+            $("#rectangulo").slideUp(2000);
+        });
+        $("#derecha").click(function(event){
+            $("#rectangulo").animate({marginLeft:'500px'}, 2000);
+        });
+        $("#color").click(function(event){
+            $("#rectangulo").animate(color:'red', 2000);
+        });
+        $("#desaparece").click(function(event){
+            $("#rectangulo").fadeOut(2000);
+        });
+        $("#oculto").click(function(event){
+            $("#rectangulo").animate(width:'0', heigth:'0' , opacity:'0', 2000);
+        });
+        $("#ocultaExtiende").click(function(event){
+            $("#rectangulo").slideUp(2000, function(){
+                $("#rectangulo").slideDown(2000);
+            });
+        });
+    });
+</script>
+<style>
+    
+</style>
+</head>
+<body>
+    <input type="button" id="persiana" value="Recoger como persiana">
+    <input type="button" id="derecha" value="Desplazamiento hacia la derecha">
+    <input type="button" id="color" value="Cambiar de color">
+    <input type="button" id="desaparece" value="Desaparece">
+    <input type="button" id="oculto" value="Ocultado">
+    <input type="button" id="ocultaExtiende" value="Ocultar y extender">
+
+    <div id="rectangulo" style="height: 300px; width: 300px; background-color: green;"></div>
+</body>
+</html>

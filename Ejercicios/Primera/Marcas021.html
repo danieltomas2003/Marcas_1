@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<title>Parar un intervalo</title>
+		<script language="Javascript">
+			var n=0;
+			function cambiar() {
+				if (n%2==0)
+					// podria ponerse de condicion del if "imagen.src == "file:///C:(ruta entera hasta el archivo)/imagenes/0.jpg""
+					imagen.src="Imagenes/img1.jpg";
+				else 
+					imagen.src="Imagenes/img4.png";
+				n++;
+			}
+			function parar() {
+				clearInterval(objeto);
+			}
+		</script>
+	</head>
+	<body onload="objeto = setInterval('cambiar()',2000)">
+		<img src="Imagenes/img1.jpg" id="imagen" height="200">
+		<br><br>
+		<input type="button" value="Parar" onclick="parar()">
+	</body>
+</html>

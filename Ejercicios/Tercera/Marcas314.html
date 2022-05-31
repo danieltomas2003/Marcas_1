@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Canvas 8</title>
+        <script type="application/javascript">
+            window.onload = function(){
+                var ctx = canvas.getContext("2d");
+                var gradiente = ctx.createLinearGradient(0,0,0,canvas.height);
+
+                gradiente.addColorStop(0,'#005');
+                gradiente.addColorStop(1,'#0F0');
+
+                ctx.fillStyle = gradiente;
+                ctx.fillRect(0,0,canvas.width,canvas.height);
+            }
+        </script>
+    </head>
+    <body>
+        <canvas id="canvas" width="350" height="350"/>
+    </body>
+</html>

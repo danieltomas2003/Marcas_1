@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>Data de datos SQLlite</title>
+        <script type="application/javascript">
+            function insertar() {                                    //2^21
+                var db = openDatabase("MiBaseDatos", "1.0", "Comentario sobre BD", 2 * 1024 * 1024); 
+                db.transaction(function(tx){
+                    tx.executeSql("CREATE TABLE IF NOT EXISTS DATOS(codigo unique, nombre)");
+                    tx.executeSql("INSERT INTO DATOS(codigo, nombre) VALUES(" + codigo.value + ",'" + nombre.value + "')"); //tambien va con \"
+                   
+                });
+                db.transaction(function(tx){
+                    tx.executeSql("SELECT * FROM DATOS", [], function(tx,resultados){
+                        //contenido.innerHTML = "";
+                        var msg = "<h1 align=center>CONTENIDO DATOS</h1><table align=center border=1>";
+                        for (i = 0; i < resultados.rows.length; i++){
+                            msg += "<tr><td><b>" + resultados.rows.item(i).codigo + "</b>-" + resultados.rows.item(i).nombre + 
+                                "</td><td width=50><input type=text id=nombrenuevo" + resultados.rows.item(i).codigo + 
+                                    "></td><td><input type=button value=Eliminar onclick=eliminar(" 
+                                    + resultados.rows.item(i).codigo + ")></td><td><input type=button value=Modificar onclick=modificar(" 
+                                    10 + "," + Pepe + ")></td></tr>";
+                        }
+                        contenido.innerHTML = msg + "</table>";
+                    });
+                });   
+            }                                                                            
+            function mostrar() {
+                var db = openDatabase("MiBaseDatos", "1.0", "Comentario sobre BD", 2 * 1024 * 1024); 
+                db.transaction(function(tx){
+                    tx.executeSql("CREATE TABLE IF NOT EXISTS DATOS(codigo unique, nombre)");
+                    tx.executeSql("SELECT * FROM DATOS", [], function(tx,resultados){
+                        //contenido.innerHTML = "";
+                        var msg = "<h1 align=center>CONTENIDO DATOS</h1><table align=center border=1>";
+                        for (i = 0; i < resultados.rows.length; i++){
+                            msg += "<tr><td><b>" + resultados.rows.item(i).codigo + "</b>-" + resultados.rows.item(i).nombre + 
+                                "</td><td width=50><input type=text id='nombrenuevo'></td><td><input type=button value=Eliminar onclick=eliminar(" 
+                                    + resultados.rows.item(i).codigo + ")></td><td><input type=button id=moddo value=Modificar onclick=modificar(" 
+                                        + resultados.rows.item(i).codigo + "," + 'nombrenuevo.value' + ")></td></tr>";
+                        }
+                        contenido.innerHTML = msg + "</table>";
+                    });
+                });   
+            }
+            function eliminar(codigo) {
+                var db = openDatabase("MiBaseDatos", "1.0", "Comentario sobre BD", 2 * 1024 * 1024); 
+                db.transaction(function(tx){
+                    tx.executeSql("DELETE FROM DATOS WHERE codigo = " + codigo);
+                    mostrar();
+                });
+            }
+            function modificar(codigo, newValue) {
+                alert(codigo + "," + newValue);
+                var db = openDatabase("MiBaseDatos", "1.0", "Comentario sobre BD", 2 * 1024 * 1024); 
+                db.transaction(function(tx){
+                    tx.executeSql("UPDATE DATOS SET nombre = " + newValue + "WHERE codigo = " + codigo);
+                    mostrar();
+                });
+            }
+        </script>
+    </head>
+    <body onload="mostrar()">
+        <form>
+            <table align="center" border="1">
+                <tr>
+                    <td>Código : <input type="number" id="codigo"></td>
+                    <td>Nombre : <input id="nombre"></td>
+                </tr>
+                <tr><td colspan="2" align="center"><input type="button" value="Insertar" onclick="insertar()"></td></tr>
+            </table>
+        </form>
+        <div id="contenido" name="contenido"></div>
+    </body>
+</html>
